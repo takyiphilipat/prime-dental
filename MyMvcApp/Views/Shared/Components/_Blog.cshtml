@@ -1,0 +1,39 @@
+@model List<MyMvcApp.Models.Post>
+
+<section class="container my-5" 
+         data-aos="fade-up"
+         style="background-color: #F59400; padding: 3rem 0; border-radius: 12px;">
+
+    <div class="text-center mb-4">
+        <span class="blog-tag">Our Blog</span>
+        <h2 class="fw-bold">Latest Blog & Articles</h2>
+        <p class="text-muted">
+            We share knowledge & helpful dental care tips for our patients.
+        </p>
+    </div>
+
+    <div class="row g-4">
+        @if (Model == null || Model.Count == 0)
+        {
+            <p class="text-center text-muted">No blog posts yet. Check back soon.</p>
+        }
+        else
+        {
+            @foreach (var post in Model)
+            {
+                <div class="col-md-6">
+                    <div class="blog-card d-flex" style="background-color: white; border-radius: 8px; overflow: hidden;">
+                        <img src="@(post.ImageUrl ?? "/img/blog1.jpg")" class="blog-img">
+                        <div class="blog-content">
+                            <h5 class="fw-bold">@post.Title</h5>
+                            <small class="text-muted">@post.PublishedDate.ToString("MMMM d, yyyy")</small>
+                            <p>@post.Content.Substring(0, Math.Min(post.Content.Length, 120))...</p>
+                            <a asp-controller="Blog" asp-action="Details" asp-route-id="@post.Id" class="read-link">Read More →</a>
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+    </div>
+
+</section>

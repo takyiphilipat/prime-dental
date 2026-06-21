@@ -1,0 +1,26 @@
+@{
+    ViewData["Title"] = "Admin Login";
+    Layout = "_AdminLayout";
+}
+
+<div class="row justify-content-center mt-5">
+    <div class="col-md-4">
+        <h3 class="mb-4 text-center">Admin Login</h3>
+
+        <div asp-validation-summary="All" class="text-danger"></div>
+
+        <form method="post">
+            <div class="mb-3">
+                <label class="form-label">Email</label>
+                <input type="email" name="email" class="form-control" required>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Password</label>
+                <input type="password" name="password" class="form-control" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100">Login</button>
+        </form>
+    </div>
+</div>

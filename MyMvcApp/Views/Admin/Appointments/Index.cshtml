@@ -1,0 +1,71 @@
+@model List<MyMvcApp.Models.Appointment>
+@{
+    ViewData["Title"] = "Manage Appointments";
+    Layout = "_AdminLayout";
+}
+
+<h2 class="mb-4">Manage Appointments</h2>
+
+@if (TempData["AdminSuccess"] != null)
+{
+    <div class="alert alert-success">@TempData["AdminSuccess"]</div>
+}
+
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Service</th>
+            <th>Gender</th>
+            <th>Date</th>
+            <th>Status</th>
+            <th style="width: 220px;">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.Count == 0)
+        {
+            <tr><td colspan="7" class="text-center text-muted">No appointments yet.</td></tr>
+        }
+        else
+        {
+            @foreach (var appt in Model)
+            {
+                <tr>
+                    <td>@appt.Name</td>
+                    <td>@appt.Email</td>
+                    <td>@appt.Service</td>
+                    <td>@appt.Gender</td>
+                    <td>@appt.AppointmentDate.ToString("MMM d, yyyy")</td>
+                    <td>
+                        <span class="badge bg-@(appt.Status switch {
+                            MyMvcApp.Models.AppointmentStatus.Pending => "secondary",
+                            MyMvcApp.Models.AppointmentStatus.Confirmed => "primary",
+                            MyMvcApp.Models.AppointmentStatus.Completed => "success",
+                            MyMvcApp.Models.AppointmentStatus.Cancelled => "danger",
+                            _ => "secondary"
+                        })">
+                            @appt.Status
+                        </span>
+                    </td>
+                    <td>
+                        <form asp-controller="Appointments" asp-action="UpdateStatus" asp-route-id="@appt.Id" asp-area="" method="post" class="d-flex gap-1">
+                            <select name="status" class="form-select form-select-sm" style="width: auto;">
+                                @foreach (var s in Enum.GetValues<MyMvcApp.Models.AppointmentStatus>())
+                                {
+                                    <option value="@s" selected="@(s == appt.Status)">@s</option>
+                                }
+                            </select>
+                            <button type="submit" class="btn btn-sm btn-outline-primary">Update</button>
+                        </form>
+                        <form asp-controller="Appointments" asp-action="Delete" asp-route-id="@appt.Id" asp-area="" method="post" class="d-inline mt-1"
+                              onsubmit="return confirm('Delete this appointment?');">
+                            <button type="submit" class="btn btn-sm btn-outline-danger">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>

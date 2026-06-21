@@ -1,0 +1,25 @@
+@model MyMvcApp.Models.Post
+@{
+    ViewData["Title"] = Model.Title;
+}
+
+<section class="container my-5">
+
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+
+            <img src="@(Model.ImageUrl ?? "/img/blog1.jpg")" class="img-fluid rounded mb-4" alt="@Model.Title">
+
+            <h1 class="fw-bold mb-2">@Model.Title</h1>
+            <small class="text-muted">@Model.PublishedDate.ToString("MMMM d, yyyy")</small>
+
+            <p class="mt-4" style="white-space: pre-line;">@Model.Content</p>
+
+            <a asp-controller="Blog" asp-action="Index" class="btn btn-outline-primary mt-3">
+                ← Back to Blog
+            </a>
+
+        </div>
+    </div>
+
+</section>

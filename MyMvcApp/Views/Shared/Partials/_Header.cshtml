@@ -1,0 +1,55 @@
+  <header>
+        <nav class="navbar main-nav fixed-top py-3 navbar-expand-lg">
+            <div class="container d-flex justify-content-between align-items-center">
+
+                <!-- Logo -->
+                <div class="d-flex align-items-center gap-2 brand-logo">
+                    <i class="fa-solid fa-tooth"></i>
+                    <h4 class="fw-bold m-0 Logo">Prime Dental</h4>
+                </div>
+
+                <!-- Desktop Menu -->
+                <ul class="nav d-none d-lg-flex">
+                    <li class="nav-item"><a class="nav-link" data-spa asp-controller="Home" asp-action="Index">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" data-spa asp-controller="Home" asp-action="WhyUs">Why Us</a></li>
+                    <li class="nav-item"><a class="nav-link" data-spa asp-controller="Home" asp-action="Services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" data-spa asp-controller="Home" asp-action="Team">Team</a></li>
+                    <li class="nav-item"><a class="nav-link" data-spa asp-controller="Home" asp-action="Pricing">Pricing</a></li>
+                    <li class="nav-item"><a class="nav-link" data-spa asp-controller="Home" asp-action="DentalSolutions">Solutions</a></li>
+                    <li class="nav-item"><a class="nav-link" data-spa asp-controller="Blog" asp-action="Index">Blog</a></li>
+                </ul>
+
+                <a asp-controller="Home" asp-action="Index" asp-fragment="book-appointment" class="btn px-4 d-none d-lg-block">Book Now</a>
+
+                <!-- Burger Button (Mobile Only) -->
+                <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu">
+                    <i class="bi bi-list fs-1"></i>
+                </button>
+
+            </div>
+        </nav>
+
+        <!-- Offcanvas Mobile Menu -->
+        <div class="offcanvas offcanvas-end" id="mobileMenu" style="background-color: #8a7aff;">
+            <div class="offcanvas-header">
+                <div class="d-flex align-items-center gap-2 brand-logo">
+                    <i class="fa-solid fa-tooth"></i>
+                    <h4 class="fw-bold m-0">Prime Dental</h4>
+                </div>
+                <button class="btn-close" data-bs-dismiss="offcanvas"></button>
+            </div>
+
+            <div class="offcanvas-body">
+                <ul class="navbar-nav gap-2">
+                    <li><a class="nav-link"  data-spa asp-controller="Home" asp-action="Index">Home</a></li>
+                    <li><a class="nav-link"  data-spa asp-controller="Home" asp-action="WhyUs">Why Us</a></li>
+                    <li><a class="nav-link"  data-spa asp-controller="Home" asp-action="Services">Services</a></li>
+                    <li><a class="nav-link"  data-spa asp-controller="Home" asp-action="Team">Team</a></li>
+                    <li><a class="nav-link"  data-spa asp-controller="Home" asp-action="Pricing">Pricing</a></li>
+                    <li><a class="nav-link"  data-spa asp-controller="Home" asp-action="DentalSolutions">Solutions</a></li>
+                    <li class="nav-item"><a class="nav-link" data-spa  asp-controller="Blog" asp-action="Index">Blog</a></li>
+                </ul>
+                <a class="btn w-100 mt-3">Book Now</a>
+            </div>
+        </div>
+    </header>

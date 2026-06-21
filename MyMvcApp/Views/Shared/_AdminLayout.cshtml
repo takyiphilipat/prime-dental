@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="~/css/bootstrap.min.css" rel="stylesheet">
+    <title>@ViewData["Title"] - Admin</title>
+</head>
+<body class="bg-light">
+    <nav class="navbar navbar-dark bg-dark px-4">
+        <span class="navbar-brand">Prime Dental Admin</span>
+
+        <div class="d-flex align-items-center gap-3">
+            <a class="text-white text-decoration-none" asp-controller="Dashboard" asp-action="Index" asp-area="">Dashboard</a>
+            <a class="text-white text-decoration-none" asp-controller="Posts" asp-action="Index" asp-area="">Posts</a>
+            <a class="text-white text-decoration-none" asp-controller="Appointments" asp-action="Index" asp-area="">Appointments</a>
+
+            @if (User.Identity != null && User.Identity.IsAuthenticated)
+            {
+                var email = User.Identity.Name ?? "";
+                var initial = email.Length > 0 ? email[0].ToString().ToUpper() : "?";
+
+                <div class="d-flex align-items-center gap-2">
+                    <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center"
+                         style="width: 32px; height: 32px; font-weight: bold;"
+                         title="@email">
+                        @initial
+                    </div>
+
+                    <form asp-controller="Account" asp-action="Logout" asp-area="" method="post" class="m-0">
+                        <button type="submit" class="btn btn-sm btn-outline-light">Logout</button>
+                    </form>
+                </div>
+            }
+        </div>
+    </nav>
+
+    <div class="container py-4">
+        @RenderBody()
+    </div>
+
+    <script src="~/js/bootstrap.bundle.min.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

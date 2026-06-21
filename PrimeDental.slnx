@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="MyMvcApp.Tests/MyMvcApp.Tests.csproj" />
+  <Project Path="MyMvcApp/MyMvcApp.csproj" />
+</Solution>

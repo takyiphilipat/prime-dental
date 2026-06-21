@@ -1,0 +1,139 @@
+@{
+    ViewData["Title"] = "pricing";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/pricing.css">
+}
+   <section class="hero-section d-flex align-items-center">
+            <div class="container text-center">
+
+                <h1 class="hero-title">
+                    Transparent & Affordable Dental Pricing
+                </h1>
+
+                <p class="hero-text">
+                    Clear treatment plans with flexible and reasonable pricing
+                    options.
+                </p>
+
+              <a asp-controller="Home" asp-action="Index" asp-fragment="book-appointment" class="btn hero-btn px-5 py-2">
+        Book an Appointment
+    </a>
+
+            </div>
+        </section>
+        <!-- Pricing Section -->
+        <section class="container py-5">
+
+            <div class="text-center mb-4">
+                <h2 class="fw-bold">Pricing Plans</h2>
+                <p class="text-muted">
+                    Choose the dental care plan that best fits your treatment
+                    needs.
+                </p>
+            </div>
+            <div class="row g-4">
+
+                <!-- Basic Plan -->
+                <div class="col-md-4">
+                    <div class="price-card">
+
+                        <h5 class="fw-bold">Basic Dental Care</h5>
+                        <p class="text-muted">Essential dental check &
+                            cleaning</p>
+
+                        <h2 class="price">$60</h2>
+
+                        <ul class="price-list">
+                            <li>✔ Dental examination</li>
+                            <li>✔ Basic teeth cleaning</li>
+                            <li>✔ Oral hygiene consultation</li>
+                            <li>✔ X-ray (if required)</li>
+                        </ul>
+
+                        <a href="#" class="btn price-btn">Choose Plan</a>
+                    </div>
+                </div>
+
+                <!-- Advanced Plan -->
+                <div class="col-md-4">
+                    <div class="price-card popular">
+
+                        <span class="badge-popular">Most Popular</span>
+
+                        <h5 class="fw-bold">Advanced Dental Care</h5>
+                        <p class="text-muted">Restorative & gum care
+                            treatment</p>
+
+                        <h2 class="price">$120</h2>
+
+                        <ul class="price-list">
+                            <li>✔ Deep scaling & polishing</li>
+                            <li>✔ Cavity fillings</li>
+                            <li>✔ Gum treatment session</li>
+                            <li>✔ Follow-up consultation</li>
+                        </ul>
+
+                        <a href="#" class="btn price-btn">Choose Plan</a>
+                    </div>
+                </div>
+
+                <!-- Premium Plan -->
+                <div class="col-md-4">
+                    <div class="price-card">
+
+                        <h5 class="fw-bold">Premium Cosmetic Care</h5>
+                        <p class="text-muted">Smile makeover & cosmetic
+                            treatment</p>
+
+                        <h2 class="price">$250</h2>
+
+                        <ul class="price-list">
+                            <li>✔ Professional whitening</li>
+                            <li>✔ Veneer evaluation</li>
+                            <li>✔ Smile design consultation</li>
+                            <li>✔ Digital before & after preview</li>
+                        </ul>
+
+                        <a href="#" class="btn price-btn">Choose Plan</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <!-- Appointment Section -->
+        <section class="container my-5">
+
+            <div class="row align-items-stretch g-0 no-gap">
+
+                <!-- Text Column (With Background & Circles) -->
+                <div class="col-md-7">
+                    <div class="appointment-box p-5">
+
+                        <h3 class="fw-bold text-white">
+                            Need Help Choosing the Right Plan?
+                        </h3>
+
+                        <p class="text-white-50">
+                            Book a consultation and our doctors will guide you
+                            to the best treatment option.
+
+                        </p>
+
+                        <a class="btn btn-light px-4 fw-semibold">
+                            Book an Appointment
+                        </a>
+
+                    </div>
+                </div>
+
+                <!-- Image Column -->
+                <div class="col-md-5">
+                <img src="~/img/picing.jpg"
+                        class="equal-img">
+                </div>
+
+            </div>
+
+        </section>

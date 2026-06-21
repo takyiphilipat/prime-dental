@@ -1,0 +1,48 @@
+@model List<MyMvcApp.Models.Post>
+@{
+    ViewData["Title"] = "Manage Posts";
+    Layout = "_AdminLayout";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h2>Manage Blog Posts</h2>
+    <a asp-action="Create" class="btn btn-primary">+ New Post</a>
+</div>
+
+@if (TempData["AdminSuccess"] != null)
+{
+    <div class="alert alert-success">@TempData["AdminSuccess"]</div>
+}
+
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Published</th>
+            <th style="width: 160px;">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.Count == 0)
+        {
+            <tr><td colspan="3" class="text-center text-muted">No posts yet.</td></tr>
+        }
+        else
+        {
+            @foreach (var post in Model)
+            {
+                <tr>
+                    <td>@post.Title</td>
+                    <td>@post.PublishedDate.ToString("MMM d, yyyy")</td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@post.Id" class="btn btn-sm btn-outline-secondary">Edit</a>
+                        <form asp-action="Delete" asp-route-id="@post.Id" method="post" class="d-inline"
+                              onsubmit="return confirm('Delete this post?');">
+                            <button type="submit" class="btn btn-sm btn-outline-danger">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>

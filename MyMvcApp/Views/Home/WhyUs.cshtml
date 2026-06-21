@@ -1,0 +1,116 @@
+@{
+    ViewData["Title"] = "Why Us?";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/whyus.css">
+}
+
+<!-- hero section-->
+<section class="hero-section d-flex align-items-center">
+    <div class="container text-center">
+
+        <h1 class="hero-title">
+            Why Choose Prime Dental?
+        </h1>
+
+        <p class="hero-text">
+            We provide trusted, compassionate and high-quality dental
+            care to ensure your comfort and confidence.
+        </p>
+
+        <a asp-controller="Home" asp-action="Index" asp-fragment="book-appointment" class="btn hero-btn px-5 py-2">
+    Book an Appointment
+        </a>
+
+    </div>
+</section>
+
+<!--why us section-->
+<section class="container py-5">
+
+    <div class="row align-items-center g-4">
+
+        <!-- Image Column -->
+        <div class="col-md-5">
+            <img src="~/img/whyus.jpg" class="why-img">
+        </div>
+
+        <!-- Text Column -->
+        <div class="col-md-7">
+
+            <h2 class="fw-bold mb-2">Why Choose Prime Dental?</h2>
+
+            <p class="text-muted mb-3">
+                At Prime Dental, we focus on delivering accurate,
+                comfortable, and high-quality dental care using modern
+                technology and experienced medical standards. Our team
+                works with care and transparency to provide personalized
+                treatment plans and a friendly clinical environment where
+                patients feel safe, confident, and supported throughout
+                their dental journey.
+            </p>
+
+            <ul class="why-list">
+
+                <li>
+                    <i class="bi bi-check-circle-fill"></i>
+                    Certified & highly-qualified dentists
+                </li>
+
+                <li>
+                    <i class="bi bi-check-circle-fill"></i>
+                    Modern technology & advanced dental equipment
+                </li>
+
+                <li>
+                    <i class="bi bi-check-circle-fill"></i>
+                    Friendly & patient-centered treatment experience
+                </li>
+
+                <li>
+                    <i class="bi bi-check-circle-fill"></i>
+                    Affordable treatment plans & flexible appointments
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!--appointment container-->
+<section class="container my-5">
+
+    <div class="row align-items-stretch g-0 no-gap">
+
+        <!-- Text Column (With Background & Circles) -->
+        <div class="col-md-7">
+            <div class="appointment-box p-5">
+
+                <h3 class="fw-bold text-white">
+                    Your Smile is Our Priority
+                </h3>
+
+                <p class="text-white-50">
+                    Book your visit and let our team take care of your
+                    dental health.
+                </p>
+
+                <a class="btn btn-light px-4 fw-semibold">
+                    Book an Appointment
+                </a>
+
+            </div>
+        </div>
+
+        <!-- Image Column -->
+        <div class="col-md-5">
+            <img src="~/img/whyusapp.jpeg" class="equal-img">
+        </div>
+
+    </div>
+
+</section>

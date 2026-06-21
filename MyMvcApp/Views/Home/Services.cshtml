@@ -1,0 +1,135 @@
+ @{
+    ViewData["Title"] = "Service";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/services.css">
+}
+   <section class="hero-section">
+
+            <div class="container text-center">
+
+                <h1 class="hero-title">
+                    Professional & Modern Dental Care
+                </h1>
+
+                <p class="hero-text">
+                    We provide advanced and high-quality dental solutions
+                    to keep your smile healthy and bright.
+                </p>
+
+               <a asp-controller="Home" asp-action="Index" asp-fragment="book-appointment" class="btn hero-btn px-5 py-2">
+                Book an Appointment
+            </a>
+
+            </div>
+
+        </section>
+
+        <!-- Our Services Section -->
+        <section class="container py-5">
+            <div class="text-center mb-4">
+                <h2 class="fw-bold">Our Services</h2>
+                <p class="text-muted">We provide advanced and professional
+                    dental care services.</p>
+            </div>
+
+            <div class="row g-4">
+
+                <!-- Service Card -->
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <i class="bi bi-brightness-high"></i>
+                        <h5>Cosmetic Dentistry</h5>
+                        <p>Teeth whitening, veneers, smile design & more.</p>
+                        <a href="#" class="link-primary fw-semibold">Learn
+                            More</a>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <i class="bi bi-braces"></i>
+                        <h5>Orthodontics</h5>
+                        <p>Braces & aligners for perfect teeth alignment.</p>
+                        <a href="#" class="link-primary fw-semibold">Learn
+                            More</a>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <i class="bi bi-brush"></i>
+                        <h5>Oral Hygiene</h5>
+                        <p>Deep cleaning & gum health treatments.</p>
+                        <a href="#" class="link-primary fw-semibold">Learn
+                            More</a>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <i class="bi bi-emoji-smile"></i>
+                        <h5>Dental Treatment</h5>
+                        <p>Fillings, restorations & cavity care.</p>
+                        <a href="#" class="link-primary fw-semibold">Learn
+                            More</a>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <i class="bi bi-hospital"></i>
+                        <h5>Dental Surgery</h5>
+                        <p>Professional oral & gum surgeries.</p>
+                        <a href="#" class="link-primary fw-semibold">Learn
+                            More</a>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <i class="bi bi-capsule"></i>
+                        <h5>Dental Implants</h5>
+                        <p>Permanent implant tooth replacement.</p>
+                        <a href="#" class="link-primary fw-semibold">Learn
+                            More</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Appointment Section -->
+        <section class="container my-5">
+
+            <div class="row align-items-stretch g-0 no-gap">
+
+                <!-- Text Column (With Background & Circles) -->
+                <div class="col-md-7">
+                    <div class="appointment-box p-5">
+
+                        <h3 class="fw-bold text-white">
+                            Schedule a virtual or presential appointment today
+                        </h3>
+
+                        <p class="text-white-50">
+                            Virtual & in-clinic consultations available
+                        </p>
+
+                        <a class="btn btn-light px-4 fw-semibold">
+                            Book an Appointment
+                        </a>
+
+                    </div>
+                </div>
+
+                <!-- Image Column -->
+                <div class="col-md-5">
+                    <img src="~/img/service.jpeg"
+                        class="equal-img">
+                </div>
+
+            </div>
+
+        </section>

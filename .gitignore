@@ -1,0 +1,25 @@
+# Build artifacts
+bin/
+obj/
+out/
+
+# .NET Core
+*.user
+*.userosscache
+*.sln.docstates
+
+# Visual Studio / Rider
+.vs/
+.idea/
+
+# VS Code
+.vscode/
+
+# macOS
+.DS_Store
+
+# Logs
+*.log
+
+# Test results
+TestResults/
